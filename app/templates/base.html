@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="Christopher Nakamoto">
+    {% block head %}
+    <title>
+    {% block title %}{% if title %}{{ title }} - AuthTool{% else %}{{ 'Welcome to GaragePI API' }}{% endif %}{% endblock %}
+    </title>
+    {% block styles %}
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        #topbarsearch input:focus + label{
+            color: white !important;
+        }
+        /* label underline focus color */
+        .input-field input:focus {
+            border-bottom: 0px solid white !important;
+            box-shadow: 0 0px 0 0 white !important
+        }
+    </style>
+    {% endblock %}
+    {% endblock %}
+</head>
+
+<body class="blue lighten-2">
+    <nav class="nav-extended grey darken-4">
+        <div class="nav-wrapper">
+            <div class="col s12 m2 l2">
+                <a href="api" class="brand-logo">GaragePI</a>
+                <a href="#" class="sidenav-trigger left" data-target="mobile-data">
+                    <i class="material-icons">menu</i>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container" style="width: 80%; height:100%; margin-top: 10px;">
+        {# application content needs to be provided in the app_content block #}
+        {% block app_content %}{% endblock %}
+    </div>
+</body>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+{% block scripts %}
+{% endblock %}
+
+</html>
